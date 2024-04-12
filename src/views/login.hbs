@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h1>Emojis Planta Semanal</h1>
+          </div>
+          <div class="card-body">
+            <div class="emoji-count">
+              <div class="emoji-item">
+                <span class="emoji">😄</span>
+                <span class="counter">{{ countsGenerales.felizCount }}</span>
+              </div>
+              <div class="emoji-item">
+                <span class="emoji">😐</span>
+                <span class="counter">{{ countsGenerales.neutralCount }}</span>
+              </div>
+              <div class="emoji-item">
+                <span class="emoji">😠</span>
+                <span class="counter">{{ countsGenerales.enojadoCount }}</span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="text-center"> 
+              <a href="/form" style="margin-block:40px;" class="btn btn-danger btn-lg">Iniciar encuesta</a>
+              <div class="divider"></div>
+              <h1>Registrate</h1>
+              <form id="signup" action="/signup" method="POST">
+                <input style="margin-bottom:5px;" type="text" id="email" name="email" class="form-control" placeholder="Email"><br>
+                <input style="margin-bottom:5px;" type="password" id="password" name="password" class="form-control" placeholder="Password"><br>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+              </form>
+              <div class="divider"></div>
+              <h1>Iniciar Sesion</h1>
+              <form id="signin" action="/signin" method="POST">
+                <input style="margin-bottom:5px;" type="text" id="email_signin" name="email_signin" class="form-control" placeholder="Email">
+                <input style="margin-bottom:5px;" type="password" id="password_signin" name="password_signin" class="form-control" placeholder="Contraseña"><br>
+                <button type="submit" class="btn btn-primary btn-block" style="margin-bottom:5px;">Enviar</button>
+              </form>
+
+            </div>
+            {{#if error}}
+            <script>
+              alert("{{ error }}");
+            </script>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

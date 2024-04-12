@@ -1,0 +1,57 @@
+<div class="col-md-10 offset-md-1">
+  <form style="margin-top: 15px;" class="d-flex" role="search" action="/dashboardStress" method="GET">
+    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="firstname">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+  </form>
+<div class="col-md-10 offset-md-1">
+  <div class="card">
+    <div class="card-header text-center">
+      <h1>Contadores Planta Semanal</h1></div>
+      <div class="emoji-count">
+        <div class="emoji-item">
+          <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva3.PNG?alt=media&token=24b06829-0872-4cbb-a377-bead115ec430" alt="Imagen" class="small-image"></span>
+          <span class="counter">{{ countsGenerales.goodCount }}</span>
+        </div>
+        <div class="emoji-item">
+          <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva2.PNG?alt=media&token=3d0283b7-6c5e-4a0d-9b88-fb46dacde1c5" alt="Imagen" class="small-image"></span>
+          <span class="counter">{{ countsGenerales.mediumCount }}</span>
+        </div>
+        <div class="emoji-item">
+          <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva1.PNG?alt=media&token=70a533ae-1bbc-4e04-a5eb-9e1839019de1" alt="Imagen" class="small-image"></span>
+          <span class="counter">{{ countsGenerales.highCount }}</span>
+        </div>
+      </div>
+    
+<div class="divider"></div>
+    <!-- Filas de contenedores para cada conjunto de tres departamentos -->
+    <div class="row">
+      {{#each countsPorDepartamento}}
+      <div class="col-md-4">
+        <div style="padding: 15px; border-radius: 5px; text-align: center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+          <h2 class="card-header text-center bg-primary text-white" style="background-color: #0066cc; padding: 10px; border-radius: 5px 5px 0 0; ">{{@key}}</h2>
+          <div class="emoji-row" style="display: flex; justify-content: center;">
+            <div class="emoji-item">
+              <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva3.PNG?alt=media&token=24b06829-0872-4cbb-a377-bead115ec430" alt="Imagen" class="small-image"></span>
+              <span class="counter">{{this.goodCount}}</span>
+            </div>
+            <div class="emoji-item">
+              <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva2.PNG?alt=media&token=3d0283b7-6c5e-4a0d-9b88-fb46dacde1c5" alt="Imagen" class="small-image"></span>
+              <span class="counter">{{this.mediumCount}}</span>
+            </div>
+            <div class="emoji-item">
+              <span class="emoji"><img src="https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva1.PNG?alt=media&token=70a533ae-1bbc-4e04-a5eb-9e1839019de1" alt="Imagen" class="small-image"></span>
+              <span class="counter">{{this.highCount}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="card-footer">
+    <center style="margin-block: 15px;">    
+    <a href="/">
+      <button class="btn btn-primary btn-block">Inicio</button>
+    </a>
+   </center>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>MoodIQ</h2>
+        </div>
+        <center>
+        <div class="card-footer">
+          <form id="moodForm" action="/grade" method="POST">
+            <div class="form-group">
+              <label for="department">Departamento:</label>
+              <select name="department" class="form-control" style="margin-bottom:30px;">
+                <option value="Direccion">Direccion de planta</option>
+                <option value="Digitalizacion">Digitalización</option>
+                <option value="RecursosHumanos">HR</option>
+                <option value="FES">FES</option>
+                <option value="HSE">HSE</option>
+                <option value="Industrializacion">Industrializacion</option>
+                <option value="Manufactura">Ingenieria de manufactura</option>
+                <option value="Mantenimiento1">Calidad UAP1</option>
+                <option value="Mantenimiento2">Calidad UAP2</option>
+                <option value="Mantenimiento3">Calidad UAP3</option>
+                <option value="TI">TI</option>
+                <option value="ShopFlow">Shop Flow</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="firstname">Nombre:</label>
+              <input type="text" name="firstname" placeholder="Nombre" class="form-control" style="margin-bottom:30px;"autofocus>
+            </div>
+            <div class="form-group">
+              <label for="emoji">¿Cómo te sientes hoy?</label>
+              <div class="d-flex justify-content-between" style="margin-bottom:30px;">
+
+                <p class="d-inline-flex gap-1">
+                <button data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" type="button" class="btn btn-outline-primary btn-lg emoji-button" value="😄">😄</button>
+                </p>
+                <p class="d-inline-flex gap-1">
+                <button data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" type="button" class="btn btn-outline-primary btn-lg emoji-button" value="😐">😐</button>
+                </p>
+                <p class="d-inline-flex gap-1">
+                <button data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" type="button" class="btn btn-outline-primary btn-lg emoji-button" value="😠">😠</button>
+                </p>
+
+              </div>
+              <input type="hidden" name="emoji" id="selectedEmoji">
+            </div>
+            <input type="hidden" name="fecha" id="fechaActual">
+            <label for="items">Elije las sentencias que describen tu sentir</label><br>
+
+            <div class="btn-group collapse" id="collapseExample" role="group" aria-label="Basic checkbox toggle button group" style="margin-bottom:30px;">
+              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" name="opcion1" value="-1">
+              <label class="btn btn-outline-success" for="btncheck1">Melancólico</label>
+              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" name="opcion2" value="-1"> 
+              <label class="btn btn-outline-success" for="btncheck2">Alcaído</label>
+              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" name="opcion3" value="-1">   
+              <label class="btn btn-outline-success" for="btncheck3">Triste</label>
+              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" name="opcion4" value="-1">
+              <label class="btn btn-outline-success" for="btncheck4">Apagado</label>
+              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" name="opcion5" value="-1"> 
+              <label class="btn btn-outline-success" for="btncheck5">Nervioso</label>
+              <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off" name="opcion8" value="-1">
+              <label class="btn btn-outline-success" for="btncheck8">Intranquilo</label>
+            </div>
+            <div class="btn-group collapse" id="collapseExample2" role="group" aria-label="Basic checkbox toggle button group" style="margin-bottom:30px;">
+              <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off" name="opcion9" value="-1"> 
+              <label class="btn btn-outline-warning" for="btncheck9">Contento</label>
+              <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off" name="opcion10" value="1"> 
+              <label class="btn btn-outline-warning" for="btncheck10">Jovial</label>
+              <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off" name="opcion11" value="1"> 
+              <label class="btn btn-outline-warning" for="btncheck11">Alegre</label>
+              <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off" name="opcion12" value="1">
+              <label class="btn btn-outline-warning" for="btncheck12">Optimista</label>
+              <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" name="opcion7" value="-1"> 
+              <label class="btn btn-outline-warning" for="btncheck7">Ansioso</label>
+            </div>
+            <div class="btn-group collapse" id="collapseExample3" role="group" aria-label="Basic checkbox toggle button group" style="margin-bottom:30px;">
+              <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off" name="opcion13" value="-1"> 
+              <label class="btn btn-outline-danger" for="btncheck13">Enfadado</label>
+              <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off" name="opcion14" value="-1"> 
+              <label class="btn btn-outline-danger" for="btncheck14">Enojado</label>
+              <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off" name="opcion15" value="-1"> 
+              <label class="btn btn-outline-danger" for="btncheck15">Irritado</label>
+              <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off" name="opcion16" value="-1"> 
+              <label class="btn btn-outline-danger" for="btncheck16">Molesto</label>
+              <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" name="opcion6" value="-1"> 
+              <label class="btn btn-outline-danger" for="btncheck6">Tenso</label>
+              </div>
+            </div>
+            <input type="hidden" id="stress" name="stress">
+            <input type="hidden" id="image" name="image">
+            <p class="fw-bold">Area a que atribuyes tu sentir:</p><br>
+            <input type="radio" class="btn-check" name="area" value="salud" id="option1" autocomplete="off">
+            <label style="margin-right: 50px;" class="btn btn-outline-primary" for="option1">Salud</label>
+            <input type="radio" class="btn-check" name="area" value="trabajo" id="option2" autocomplete="off">
+            <label style="margin-right: 50px;" class="btn btn-outline-primary" for="option2">Trabajo</label>
+            <input type="radio" class="btn-check" name="area" value="personal" id="option3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="option3">Personal</label>
+            
+            <center style="margin-top: 15px;">     
+              <button class="btn btn-primary btn-block" type="submit" onclick="calcular()" style="margin-bottom:15px;">Enviar</button>
+        </form>
+        </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const emojiButtons = document.querySelectorAll('.emoji-button');
+  const selectedEmojiInput = document.getElementById('selectedEmoji');
+
+  emojiButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remover la clase 'selected' solo del botón de emoji previamente seleccionado
+      const previouslySelectedButton = document.querySelector('.emoji-button.selected');
+      if (previouslySelectedButton) {
+        previouslySelectedButton.classList.remove('selected');
+      }
+
+      // Agregar la clase 'selected' al botón de emoji seleccionado
+      this.classList.add('selected');
+      selectedEmojiInput.value = this.value;
+    });
+  });
+
+  // Obtenemos el elemento del campo oculto de la fecha actual
+  var fechaActualInput = document.getElementById('fechaActual');
+  // Creamos un nuevo objeto de fecha
+  var fechaActual = new Date();
+  var fechaActualFormateada = fechaActual.toISOString().split('T')[0]; // Obtenemos la parte de la fecha en formato YYYY-MM-DD
+
+  // Asignamos la fecha actual formateada al campo oculto de fecha
+  fechaActualInput.value = fechaActualFormateada;
+
+  function calcular() {
+    var stress = 0;
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        stress += parseInt(checkbox.value);
+      }
+    });
+
+    // Establecer el valor de 'stress' en el campo oculto 'stress'
+    document.getElementById('stress').value = stress;
+
+    // Definir la variable de imagen basada en el valor de stress
+    var image;
+    if (stress > 0) {
+      image = 'https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva3.PNG?alt=media&token=24b06829-0872-4cbb-a377-bead115ec430';
+    } else if (stress >= -4) {
+      image = 'https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva2.PNG?alt=media&token=3d0283b7-6c5e-4a0d-9b88-fb46dacde1c5';
+    } else {
+      image = 'https://firebasestorage.googleapis.com/v0/b/moodiq-2d5d4.appspot.com/o/Diapositiva1.PNG?alt=media&token=70a533ae-1bbc-4e04-a5eb-9e1839019de1';
+    }
+
+    // Asignar la variable de imagen al atributo src del elemento de imagen
+    document.getElementById('image').value = image;
+
+    console.log('El valor de stress es:', stress);
+    console.log('La imagen seleccionada es:', image);
+  }
+
+  // Llamar a la función calcular() cada vez que se haga clic en el botón de envío del formulario
+  document.getElementById('moodForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe por defecto
+    calcular();
+    this.submit(); // Envía el formulario después de calcular el estrés
+  });
+});
+
+</script>

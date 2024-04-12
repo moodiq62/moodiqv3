@@ -1,0 +1,253 @@
+<div class="col-md-10 offset-md-1">
+  <div class="card">
+    <div class="card-header text-center"><h1>Emojis Planta Hoy</h1></div>
+    <div class="card-body">
+      <div class="emoji-count">
+        <div class="emoji-item">
+          <span class="emoji">😄</span>
+          <span class="counter">{{ countsGenerales.felizCount }}</span>
+        </div>
+        <div class="emoji-item">
+          <span class="emoji">😐</span>
+          <span class="counter">{{ countsGenerales.neutralCount }}</span>
+        </div>
+        <div class="emoji-item">
+          <span class="emoji">😠</span>
+          <span class="counter">{{ countsGenerales.enojadoCount }}</span>
+        </div>
+      </div>
+    </div>
+<div class="divider"></div>
+    <!-- Filas de contenedores para cada conjunto de tres departamentos -->
+    <div class="row">
+      {{#each countsPorDepartamento}}
+      <div class="col-md-4">
+        <div style="padding: 15px; border-radius: 5px; text-align: center; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+          <h2 class="card-header text-center bg-primary text-white" style="background-color: #0066cc; padding: 10px; border-radius: 5px 5px 0 0;">{{@key}}</h2>
+          <div class="emoji-row" style="display: flex; justify-content: center;">
+            <div class="emoji-item">
+              <span class="emoji">😄</span>
+              <span class="counter">{{this.felizCount}}</span>
+            </div>
+            <div class="emoji-item">
+              <span class="emoji">😐</span>
+              <span class="counter">{{this.neutralCount}}</span>
+            </div>
+            <div class="emoji-item">
+              <span class="emoji">😠</span>
+              <span class="counter">{{this.enojadoCount}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+<div class="card-footer">
+    <center style="margin-block: 15px;">    
+    <a href="/">
+      <button class="btn btn-primary btn-block">Inicio</button>
+    </a>
+   </center>
+  </div>
+</div>
+
+
+<!--
+</div>
+  <div class="card">
+    <div class="card-header text-center">
+          <h2>Tablero</h2>      
+    </div>
+    <div class="card-body" style="display: flex; flex-wrap: wrap;">
+      {{#if averages}}
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+          <div class="card-header text-center bg-primary text-white"><h3>Digitalización</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "digitalizacion"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>Recursos Humanos</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "recursosHumanos"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>FES</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "fes"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>HSE</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "hse"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>Industrializacion</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "industrializacion"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>Manufactura</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "manufactura"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>Mantenimiento</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "mantenimiento"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>PC&L</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "pc&l"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <thead>
+            <div class="card-header text-center bg-primary text-white"><h3>PM</h3></div>
+            <tr>
+              <th>Emoji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "pm"}}
+                  <tr>
+                    <td class="emoji text-center">{{emoji}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      {{else}}
+        <p>Sin datos</p>
+      {{/if}}
+    </div>
+    <div class="card-footer">
+    <center style="margin-top: 15px;">    
+    <a href="/">
+      <button class="btn btn-primary btn-block">Inicio</button>
+    </a>
+   </center>
+  </div>
+</div>

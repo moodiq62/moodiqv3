@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card">
+      <div class="card-header text-center">
+          <h2>MoodIQ</h2>
+      </div>
+      <center>  
+        <div class="card-footer">
+          <form id="areaForm" action="/area" method="POST" style="margin-bottom:50px;">
+           <p class="fw-bold">Area a que atribuyes tu sentir:</p><br>
+            <input type="radio" class="btn-check" name="area" value="salud" id="option1" autocomplete="off">
+            <label style="margin-right: 50px;" class="btn btn-outline-primary" for="option1">Salud</label>
+            <input type="radio" class="btn-check" name="area" value="trabajo" id="option2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="option2">Trabajo</label>
+            <input type="hidden" name="fecha" id="fechaActual">
+          </div>
+            <center style="margin-top: 15px;">    
+              <button class="btn btn-primary btn-block" type="submit" style="margin-bottom:15px;">SUBMIT</button>
+        </form> <br>
+            <a href="/dashboardAverage"> <button class="btn btn-primary btn-block" style="margin-bottom:15px;">DASHBOARD</button>
+        </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtenemos el elemento del campo oculto de la fecha actual
+  var fechaActualInput = document.getElementById('fechaActual');
+  // Creamos un nuevo objeto de fecha
+  var fechaActual = new Date();
+  var fechaActualFormateada = fechaActual.toISOString().split('T')[0]; // Obtenemos la parte de la fecha en formato YYYY-MM-DD
+
+// Asignamos la fecha actual formateada al campo oculto de fecha
+  fechaActualInput.value = fechaActualFormateada;
+
+   var stress = 0;
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            stress += parseInt(checkbox.value);
+        }
+    });
+    
+  });
+</script>
+
+

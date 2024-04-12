@@ -1,0 +1,349 @@
+<div class="col-md-10 offset-md-1">
+  <form style="margin-top: 15px;" class="d-flex" role="search" action="/dashboardStress" method="GET">
+  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="firstname">
+  <button class="btn btn-primary" type="submit">Buscar</button>
+  </form>
+  <div class="col-md-10 offset-md-1">
+  <div class="card">
+    <div class="card-header text-center">
+      <h1>Tablero</h1></div>
+    <div class="card-body" style="display: flex; flex-wrap: wrap;">
+      {{#if averages}}
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Direccion de planta</h3></div>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Direccion"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Digitalización</h3></div>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Digitalizacion"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Recursos Humanos</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "RecursosHumanos"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+        <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>FES</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "FES"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>HSE</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "HSE"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+        <div class="card-header text-center bg-primary text-white"><h3>Industrializacion</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Industrializacion"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Manufactura</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Manufactura"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Calidad UAP1</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Mantenimiento1"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Calidad UAP2</h3></div>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Mantenimiento2"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Calidad UAP3</h3></div>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "Mantenimiento3"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>TI</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "TI"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+        <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>Shop Flow</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "ShopFlow"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
+      <div style="flex: 0 0 33%; padding: 0 15px;">
+      <table class="table table-bordered">
+          <div class="card-header text-center bg-primary text-white"><h3>PM</h3></div>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Imagen</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each averages}}
+              {{#ifEqual department "PM"}}
+                  <tr>
+                    <td>{{firstname}}</td>
+                    <td>{{fecha}}</td>
+                    <td><img src="{{image}}" alt="Imagen" class="small-image"></td>
+                    <td>{{area}}</td>
+                  </tr>
+              {{/ifEqual}}
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <p>No contacts yet</p>
+      {{/if}}
+          </div>
+        </div>
+      <div class="card-footer">
+      <center style="margin-block: 15px;">    
+    <a href="/">
+      <button class="btn btn-primary btn-block">Inicio</button>
+    </a>
+   </center>
+  </div>
+  </div>
+</div>
+
